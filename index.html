@@ -1,0 +1,222 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>12 Floating Card Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      width: 200px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+    }
+
+    .card h2 {
+      margin-top: 10px;
+      color: #333;
+      font-size: 1.2em;
+    }
+
+    .card-details {
+      display: none;
+      margin-top: 15px;
+      color: #666;
+      line-height: 1.6;
+      flex-grow: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .card-details::-webkit-scrollbar {
+      display: none;
+    }
+
+    .card-icon {
+      font-size: 2em;
+      color: #4a69bd;
+      margin-bottom: 10px;
+    }
+
+    .read-more {
+      background-color: #4a69bd;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      align-self: flex-start;
+    }
+
+    .card.maximized {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 80%;
+      z-index: 1000;
+      overflow-y: auto;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card" onclick="toggleDetails(this)">
+    <div class="card-icon">📚</div>
+    <h2>Card 1</h2>
+    <div class="card-details">
+      <p>Details for Card 1. This card represents knowledge and learning. Click again to hide.</p>
+      <p>Additional information can be added here to demonstrate scrolling in the card.</p>
+    </div>
+    <button class="read-more">Read More</button>
+    <button class="close-btn" onclick="toggleDetails(this.parentElement)">Close</button>
+  </div>
+
+  <div class="card" onclick="toggleDetails(this)">
+    <div class="card-icon">💡</div>
+    <h2>Card 2</h2>
+    <div class="card-details">
+      <p>Details for Card 2. This card symbolizes ideas and innovation. Click again to hide.</p>
+      <p>Additional information can be added here to demonstrate scrolling in the card.</p>
+    </div>
+    <button class="read-more">Read More</button>
+    <button class="close-btn" onclick="toggleDetails(this.parentElement)">Close</button>
+  </div>
+
+  <div class="card" onclick="toggleDetails(this)">
+    <div class="card-icon">🌿</div>
+    <h2>Card 3</h2>
+    <div class="card-details">
+      <p>Details for Card 3. This card represents growth and nature. Click again to hide.</p>
+      <p>Additional information can be added here to demonstrate scrolling in the card.</p>
+    </div>
+    <button class="read-more">Read More</button>
+    <button class="close-btn" onclick="toggleDetails(this.parentElement)">Close</button>
+  </div>
+
+  <div class="card" onclick="toggleDetails(this)">
+    <div class="card-icon">🎨</div>
+    <h2>Card 4</h2>
+    <div class="card-details">
+      <p>Details for Card 4. This card symbolizes creativity and art. Click again to hide.</p>
+      <p>Additional information can be added here to demonstrate scrolling in the card.</p>
+    </div>
+    <button class="read-more">Read More</button>
+    <button class="close-btn" onclick="toggleDetails(this.parentElement)">Close</button>
+  </div>
+
+  <div class="card" onclick="toggleDetails(this)">
+    <div class="card-icon">🔬</div>
+    <h2>Card 5</h2>
+    <div class="card-details">
+      <p>Details for Card 5. This card represents science and discovery. Click again to hide.</p>
+      <p>Additional information can be added here to demonstrate scrolling in the card.</p>
+    </div>
+    <button class="read-more">Read More</button>
+    <button class="close-btn" onclick="toggleDetails(this.parentElement)">Close</button>
+  </div>
+
+  <div class="card" onclick="toggleDetails(this)">
+    <div class="card-icon">🏆</div>
+    <h2>Card 6</h2>
+    <div class="card-details">
+      <p>Details for Card 6. This card symbolizes achievement and success. Click again to hide.</p>
+      <p>Additional information can be added here to demonstrate scrolling in the card.</p>
+    </div>
+    <button class="read-more">Read More</button>
+    <button class="close-btn" onclick="toggleDetails(this.parentElement)">Close</button>
+  </div>
+
+  <div class="card" onclick="toggleDetails(this)">
+    <div class="card-icon">🌍</div>
+    <h2>Card 7</h2>
+    <div class="card-details">
+      <p>Details for Card 7. This card represents global awareness and travel. Click again to hide.</p>
+      <p>Additional information can be added here to demonstrate scrolling in the card.</p>
+    </div>
+    <button class="read-more">Read More</button>
+    <button class="close-btn" onclick="toggleDetails(this.parentElement)">Close</button>
+  </div>
+
+  <div class="card" onclick="toggleDetails(this)">
+    <div class="card-icon">🤝</div>
+    <h2>Card 8</h2>
+    <div class="card-details">
+      <p>Details for Card 8. This card symbolizes partnership and cooperation. Click again to hide.</p>
+      <p>Additional information can be added here to demonstrate scrolling in the card.</p>
+    </div>
+    <button class="read-more">Read More</button>
+    <button class="close-btn" onclick="toggleDetails(this.parentElement)">Close</button>
+  </div>
+
+  <div class="card" onclick="toggleDetails(this)">
+    <div class="card-icon">🚀</div>
+    <h2>Card 9</h2>
+    <div class="card-details">
+      <p>Details for Card 9. This card represents progress and ambition. Click again to hide.</p>
+      <p>Additional information can be added here to demonstrate scrolling in the card.</p>
+    </div>
+    <button class="read-more">Read More</button>
+    <button class="close-btn" onclick="toggleDetails(this.parentElement)">Close</button>
+  </div>
+
+  <div class="card" onclick="toggleDetails(this)">
+    <div class="card-icon">🎵</div>
+    <h2>Card 10</h2>
+    <div class="card-details">
+      <p>Details for Card 10. This card symbolizes music and harmony. Click again to hide.</p>
+      <p>Additional information can be added here to demonstrate scrolling in the card.</p>
+    </div>
+    <button class="read-more">Read More</button>
+    <button class="close-btn" onclick="toggleDetails(this.parentElement)">Close</button>
+  </div>
+
+  <div class="card" onclick="toggleDetails(this)">
+    <div class="card-icon">⚖️</div>
+    <h2>Card 11</h2>
+    <div class="card-details">
+      <
